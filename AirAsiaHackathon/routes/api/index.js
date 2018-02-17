@@ -15,11 +15,12 @@ router.post('/uploadJson', function(req, res, next) {
         json: true
     }, function (error, response, body) {
         if (!error && response.statusCode === 200) {
-            console.log(body) // Print the json response
+            dbconnection.saveBooking(booking);
+
         }
     })
-    dbconnection.saveBooking();
-    res.redirect('/preflight?id=');
+    res.redirect('/preflight?error=false');
+
 });
 
 router.post('/preFlight', function(req, res, next) {

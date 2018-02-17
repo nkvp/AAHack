@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/preflight', function(req, res, next) {
     var session = req.session;
-    res.render('preflight', { id: request.query.id });
+    res.render('preflight');
 });
 
 
